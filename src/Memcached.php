@@ -24,7 +24,7 @@ final class Memcached implements CacheInterface
 {
     public const DEFAULT_SERVER_HOST = '127.0.0.1';
     public const DEFAULT_SERVER_PORT = 11211;
-    public const DEFAULT_SERVER_WEIGHT = 1;
+    public const DEFAULT_SERVER_WEIGHT = 0;
     private const EXPIRATION_INFINITY = 0;
     private const EXPIRATION_EXPIRED = -1;
 
