@@ -44,9 +44,9 @@ final class Memcached implements CacheInterface
     private $persistentId;
 
     /**
-     * @param string $persistentId By default the Memcached instances are destroyed at the end of the request. To create an
-     * instance that persists between requests, use persistent_id to specify a unique ID for the instance. All instances
-     * created with the same persistent_id will share the same connection.
+     * @param string $persistentId By default the Memcached instances are destroyed at the end of the request. To create
+     * an instance that persists between requests, use persistent_id to specify a unique ID for the instance.
+     * All instances created with the same persistent_id will share the same connection.
      * @param array $servers list of memcached servers that will be added to the server pool
      *
      * @see https://www.php.net/manual/en/memcached.construct.php
@@ -181,7 +181,8 @@ final class Memcached implements CacheInterface
     }
 
     /**
-     * @noinspection PhpDocMissingThrowsInspection DateTime won't throw exception because constant string is passed as time
+     * @noinspection PhpDocMissingThrowsInspection DateTime won't throw exception because constant string is passed as
+     * time.
      *
      * Normalizes cache TTL handling strings and {@see DateInterval} objects.
      *
@@ -274,7 +275,10 @@ final class Memcached implements CacheInterface
     {
         foreach ($servers as $server) {
             if (!is_array($server) || !isset($server[0], $server[1])) {
-                throw new CacheException('Each entry in servers parameter is supposed to be an array containing hostname, port, and, optionally, weight of the server.');
+                throw new CacheException(
+                    'Each entry in servers parameter is supposed to be an array containing hostname, port, and, ' .
+                    'optionally, weight of the server.'
+                );
             }
         }
     }
